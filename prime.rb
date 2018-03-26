@@ -1,5 +1,9 @@
-def prime?(num)
-  range = (2..(num/2)).to_a
-  return false if num == 0 || num == 1
-  range.none? {|divisor| num % divisor == 0}
-end 
+def prime?(integer)
+    return false if integer < 2
+    (2..integer - 1).each do |x|
+        if (integer % x) == 0
+            return false
+        end
+    end
+    true
+end
